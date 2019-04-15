@@ -1,0 +1,43 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <h1 class="display-4" style="color:orange">Cart Page</h1>
+    <p class="lead">This is your cart, you can check it out any time</p>
+    <!-- <hr class="my-4"> -->
+  
+  <table class="table">
+      <thead class="thead-dark">
+          <tr>
+              <th scope="col">
+                  ProductName
+              </th>
+              <th scope="col">
+                  Price
+              </th>
+              <th scope="col"></th>
+          </tr>
+      </thead>
+      <tbody>
+          <!-- data from database -->
+  
+      </tbody>
+      <tr>
+          <td scope="row">
+              Total
+          </td>
+          <td>
+              @ViewData["Total"] $
+          </td>
+      </tr>
+  
+  </table>
+  <div style="overflow:auto">
+      <a class="btn btn-primary" style="float:left" [routerLink]="['/shop']"> Back</a>
+      <a class="btn btn-primary" style="float:right" (click) = "Checkout()"> Check Out</a>
+      
+      <div style="clear:both"></div>
+  </div>
+  </body>
+</html>

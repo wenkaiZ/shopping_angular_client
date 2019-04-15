@@ -1,0 +1,9 @@
+{
+    "/api": {
+      "target": "https://webstoreapp.azurewebsites.net",
+      "secure": false,
+      "pathRewrite": {"^/api" : ""},
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }

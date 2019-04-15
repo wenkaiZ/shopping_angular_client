@@ -1,0 +1,10 @@
+h1 {
+    position: center;
+    font-family: 'Bad Script', cursive;
+    color: orangered;
+}
+
+p {
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+}

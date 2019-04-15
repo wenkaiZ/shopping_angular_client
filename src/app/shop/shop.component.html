@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>My Awesome Store</title>
+</head>
+<body>
+    <div style="overflow:auto"> 
+        <h1>Welcome to my store!</h1>
+        
+    </div>
+    <div class="container">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>
+                        ProductName
+                    </th>
+                    <th>
+                        Price
+                    </th>
+                    <th>
+                        Add Item
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- data from database -->
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <a class="btn btn-primary" (click)="Cart()"> See Cart</a>
+
+        <a style="float:right" class="btn btn-danger"> Crush</a>
+        <div style="clear:both"></div>
+    </div>
+    <div class="container-fluid bg-4 text-center">
+        <h3 class="margin">Here are our company's products!</h3><br>
+        <div class="row" style="overflow:auto">
+          <div class="card" style="width: 25%;">
+            <img class="card-img-top" src="https://o.aolcdn.com/images/dims?quality=85&image_uri=https%3A%2F%2Fs.aolcdn.com%2Fhss%2Fstorage%2Fmidas%2Fbe8deaf69ebb2e866257646588bb5999%2F206681111%2FIPHONE.jpg&client=amp-blogside-v2&signature=95c6c8ca18041d5509569b436586a2238c49ef04" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">IPhone X</p>
+            </div>
+          </div>
+          <div class="card" style="width: 25%;">
+            <img class="card-img-top" src="https://www.bestheadphones.co.uk/wp-content/uploads/2019/01/avoid-monster.jpeg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Beats</p>
+            </div>
+          </div>
+          <div class="card" style="width: 25%;">
+            <img class="card-img-top" src="https://cdn.pocket-lint.com/r/s/970x/assets/images/142228-smartwatches-review-apple-watch-series-3-review-image1-zwf0iiorer.jpg" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Apple Watch</p>
+            </div>
+          </div>
+          <div class="card" style="width: 25%;">
+            <img class="card-img-top" src="https://assets.pcmag.com/media/images/616567-apple-ipad-pro.jpg?thumb=y" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">IPad</p>
+            </div>
+          </div>
+            
+        </div>
+    </div>
+</body>
+</html>
