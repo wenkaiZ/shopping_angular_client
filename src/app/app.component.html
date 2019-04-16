@@ -20,11 +20,14 @@
           <li class="nav-item active">
             <a class="nav-link" href="">Home </a>
           </li>
-          <li class="nav-item">
+          <li *ngIf="!shareInfoClass.logIn" class="nav-item">
             <a class="nav-link" href="login">Login</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+          <li *ngIf="shareInfoClass.logIn" class="nav-item">
+            <a class="nav-link" href="shop">{{ shareInfoClass.userName }}</a>
+          </li>
+          <li *ngIf="shareInfoClass.logIn" class="nav-item">
+            <a class="nav-link" href="login/">Logout</a>
           </li>
         </ul>
       </div>

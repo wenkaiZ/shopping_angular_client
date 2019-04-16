@@ -10,13 +10,15 @@ import { ShopComponent } from './shop/shop.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RegisterComponent } from './register/register.component';
+import { PaymentComponent } from './payment/payment.component';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'shop', component: ShopComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: 'cart', component: CartComponent },
   { path: 'checkout' , component:CheckoutComponent},
-  { path: 'register', component:RegisterComponent}
+  { path: 'register', component:RegisterComponent},
+  { path: 'payment', component:PaymentComponent}
 ];
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     ShopComponent,
     CartComponent,
     CheckoutComponent,
-    RegisterComponent
+    RegisterComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

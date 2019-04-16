@@ -7,32 +7,24 @@
     <p class="lead">This is your cart, you can check it out any time</p>
     <!-- <hr class="my-4"> -->
   
-  <table class="table">
+    <p *ngIf="!shoppingCartItems"><em>Loading...</em></p>
+
+    <table class='table table-striped' *ngIf="shoppingCartItems">
       <thead class="thead-dark">
-          <tr>
-              <th scope="col">
-                  ProductName
-              </th>
-              <th scope="col">
-                  Price
-              </th>
-              <th scope="col"></th>
-          </tr>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+        </tr>
       </thead>
       <tbody>
-          <!-- data from database -->
-  
+        <tr *ngFor="let s of userItems">
+                <td>{{ s.productName }}</td>
+                <div *ngFor="let p of products">
+                    <td *ngIf="p.productName==s.productName">{{ p.price }}</td>
+                </div>
+        </tr>
       </tbody>
-      <tr>
-          <td scope="row">
-              Total
-          </td>
-          <td>
-              @ViewData["Total"] $
-          </td>
-      </tr>
-  
-  </table>
+    </table>
   <div style="overflow:auto">
       <a class="btn btn-primary" style="float:left" [routerLink]="['/shop']"> Back</a>
       <a class="btn btn-primary" style="float:right" (click) = "Checkout()"> Check Out</a>

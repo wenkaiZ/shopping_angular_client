@@ -4,9 +4,8 @@ import { ShareInfoClass } from './shareInfoClass';
   providedIn: 'root'
 })
 export class ShareInfoService {
-  shareInfo: ShareInfoClass;
-  logIn : Boolean = false;
-  userName : string;
+  static logIn : Boolean = false;
+  static userName : string;
   change : EventEmitter<any>;
   constructor() {
     this.change = new EventEmitter();

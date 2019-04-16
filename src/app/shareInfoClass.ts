@@ -1,4 +1,4 @@
 export class ShareInfoClass{
     logIn : Boolean = false;
-    UserName : string;
+    userName : string;
 }

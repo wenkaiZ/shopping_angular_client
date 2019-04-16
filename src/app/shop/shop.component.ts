@@ -1,5 +1,8 @@
+import { ShoppingCartItem } from './../shoppingCartItem';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router';
+import { UsersService } from '../users.service';
+import { Product } from '../Product';
 
 @Component({
   selector: 'app-shop',
@@ -8,7 +11,11 @@ import { RouterModule, Router } from '@angular/router';
 })
 export class ShopComponent implements OnInit {
 
-  constructor(private router:Router) { }
+  products: Product[];
+
+  constructor(private router:Router, private userService:UsersService) { 
+    this.products = UsersService.products;
+  }
 
   ngOnInit() {
   }

@@ -2,10 +2,10 @@
   <div class="row">
       <h1 style="text-align: center">Sign Up</h1>
       <div style="width: 30%; margin: 25px auto;">
-          <form action="/register" method="post">
+          <form (ngSubmit)="register()">
             <div class="form-group">
-                <input class="form-control" type="text" name="userName" placeholder="username"
-                [(ngModel)]="user.UserName">
+                <input class="form-control" type="text" name="userName" placeholder="user name"
+                [(ngModel)]="user.userName">
             </div>
             <div class="form-group">
                 <input class="form-control" type="password" name="password" placeholder="password"
@@ -16,7 +16,7 @@
                 [(ngModel)]="rePassword">
             </div>
             <div class="form-group">
-                  <button class="btn btn-lg btn-primary btn-block" (click) = "register()">Sign Up!</button>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up!</button>
             </div>
           </form>
           <a routerLink="/login">Go Back</a>
