@@ -19,6 +19,7 @@
             <th>ID</th>
             <th>Product Name</th>
             <th>Price</th>
+            <th>Add to Shopping Cart</th>
           </tr>
         </thead>
         <tbody>
@@ -26,6 +27,13 @@
             <td>{{ p.id }}</td>
             <td>{{ p.productName }}</td>
             <td>{{ p.price }}</td>
+            <td>
+                <form (ngSubmit)="addItem($event)" name ={{p.productName}}>
+                    <input name ="ProductName" id="_ProductName" type="text" value={{p.productName}} style="display:none"/>
+                    <input name ="UserId" id="_UserId" type="text" [(ngModel)]="userName" style="display:none" />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
+                </form>
+            </td>
           </tr>
         </tbody>
       </table>

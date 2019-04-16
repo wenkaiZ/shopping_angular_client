@@ -2,39 +2,40 @@
     Please select one card you have ever used:
   </p >
   <div class="container">
-    <table class="table table-dark">
-        <thead>
-            <tr>
-                <th>
-                    CardNum
-                </th>
-  
-                <th></th>
-            </tr>
+      <p *ngIf="!paymentInfo"><em>Loading...</em></p>
+
+      <table class='table table-striped' *ngIf="paymentInfo">
+        <thead class="thead-dark">
+          <tr>
+            <th>Card Number</th>
+            <th>Selection</th>
+          </tr>
         </thead>
         <tbody>
-            
+          <tr *ngFor="let p of paymentInfo">
+                  <td *ngIf="p.userName==user">{{ p.cardNum }}</td>
+                  <td *ngIf="p.userName==user"> <button (click) = "CheckOut()">Use This</button></td>
+          </tr>
         </tbody>
-    </table>
+      </table>
   </div>
   <p class="alert alert-info">
     Or You can enter a new deposit/credit card infomation:
   </p >
-  
-  <form>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Card Number</label>
-        <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter card Info">
-        <small class="form-text text-muted">We'll never share your info with anyone else.</small>
-      </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      </div>
-      <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-      </div>
-      <button type="submit" class="btn btn-primary" [routerLink]="['/checkout']">Submit</button>
+  <div style="width: 30%; margin: 25px auto;">
+    <form (ngSubmit)="AddCard()">
+        <div class="form-group">
+            <input class="form-control" type="text" name="userName" placeholder="card number"
+            [(ngModel)]="newPayment.cardNum">
+        </div>
+        <div class="form-group">
+            <input class="form-control" type="password" name="password" placeholder="password"
+            [(ngModel)]="newPayment.password">
+        </div>
+
+        <div class="form-group">
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        </div>
     </form>
+  </div>
   <a class="btn btn-danger" style="float:right"> Crush</a >
