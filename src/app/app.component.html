@@ -21,7 +21,7 @@
             routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }"
             >
-              <a class="nav-link" *ngIf="shareInfoClass.logIn"> Login As: {{ shareInfoClass.userName }}</a>
+              <a class="nav-link" routerLink="/shop" *ngIf="shareInfoClass.logIn"> Login As: {{ shareInfoClass.userName }}</a>
             </li>
             <li
             routerLinkActive="active"
@@ -35,18 +35,18 @@
           >
             <a class="nav-link" routerLink="login" *ngIf="!shareInfoClass.logIn">Log in</a>
           </li>
-          <li
+          <!-- <li
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >
             <a class="nav-link" routerLink="/cart" *ngIf="shareInfoClass.logIn">Cart</a>
-          </li>
-          <li
+          </li> -->
+          <!-- <li
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
           >
             <a class="nav-link" routerLink="/payment" *ngIf="shareInfoClass.logIn">Check out</a>
-          </li>
+          </li> -->
           <li
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"

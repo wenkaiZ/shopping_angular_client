@@ -85,11 +85,11 @@ export class UsersService {
     .subscribe(
       val => {
         console.log('post successfully', val);
-        this.router.navigate(['/cart'])
+        this.router.navigate(['/shop'])
       },
       error => {
         console.log('fail to post', error);
-        this.router.navigate(['/cart'])
+        this.router.navigate(['/shop'])
       }
     );
   }
@@ -121,11 +121,11 @@ httpDeleteAllItem(content) {
   .subscribe(
     val => {
       console.log('post successfully', val);
-      this.router.navigate(['/shop'])
+      this.router.navigate(['/checkout'])
     },
     error => {
       console.log('fail to post', error);
-      this.router.navigate(['/shop'])
+      this.router.navigate(['/checkout'])
     }
   );
 }
