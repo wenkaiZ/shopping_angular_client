@@ -11,6 +11,9 @@ import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { RegisterComponent } from './register/register.component';
 import { PaymentComponent } from './payment/payment.component';
+import { GameComponent } from './game/game.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogConfig, MatDialogModule, MatCheckboxModule, MatFormFieldModule,MatButtonModule, MatInputModule, MatRippleModule, MatCommonModule } from '@angular/material';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'shop', component: ShopComponent },
@@ -28,7 +31,8 @@ const appRoutes: Routes = [
     CartComponent,
     CheckoutComponent,
     RegisterComponent,
-    PaymentComponent
+    PaymentComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
@@ -36,8 +40,25 @@ const appRoutes: Routes = [
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
+    MatButtonModule,
+    MatFormFieldModule,
+    MatCommonModule,
+    MatInputModule,
+    MatRippleModule,
+    MatCheckboxModule,
+    BrowserAnimationsModule,
+    MatDialogModule
+  ],
+  exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
+    MatCheckboxModule,
+    MatCommonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [GameComponent]
 })
 export class AppModule { }

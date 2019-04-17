@@ -6,6 +6,8 @@ import { ShoppingCartItem } from '../shoppingCartItem';
 import { UsersService } from '../users.service';
 import { Product } from '../products';
 import { ShareInfoService } from '../share-info.service';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, MatDialogConfig} from '@angular/material';
+import { GameComponent } from '../game/game.component';
 
 @Component({
   selector: 'app-cart',
@@ -19,12 +21,14 @@ export class CartComponent implements OnInit {
   products: Product[];
   user: string;
 
+  private fileNameDialogRef: MatDialogRef<GameComponent>;
 
-  constructor(private router:Router, private userService:UsersService) {
+  constructor(private router:Router, private userService:UsersService, private dialog: MatDialog) {
+    this.userService.httpGetShoppingCartItems();
     this.shoppingCartItems = UsersService.shoppingCartItems;
     this.products = UsersService.products;
     this.user = ShareInfoService.userName;
-    this.userService.httpGetShoppingCartItems();
+    // this.openDialog();
     setTimeout(() => {
       this.CheckItems();
     }, 100);
@@ -48,5 +52,20 @@ export class CartComponent implements OnInit {
   }
   public Checkout(){
     this.router.navigate(['/payment'])
+  }
+  openDialog(): void {
+    // const dialogConfig = new MatDialogConfig();
+    // dialogConfig.hasBackdrop = true;
+    // console.log(dialogConfig);
+    this.fileNameDialogRef = this.dialog.open(GameComponent,{
+      hasBackdrop : true,
+      autoFocus : true,
+      disableClose: true
+    });
+    
+
+    this.fileNameDialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
