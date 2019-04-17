@@ -1,11 +1,23 @@
 <html>
-  <head></head>
-  <body>
-    <div style="background:rgb(240, 234, 234); height: 1000px; width: 1000px">
-      <p>
-        aaa works!
-      </p>
-      
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="alert alert-info" role="alert">
+    Your cart is loading, let's have a random joke game!
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://sites.psu.edu/siowfa16/files/2016/10/YeDYzSR-10apkm4.png"
+      alt="Card image cap">
+    <div class="card-body" *ngIf="joke">
+      <p class="card-text">{{joke}}</p>
+      <button (click)="Change()" class="btn btn-danger"> Click me to change a ramdom joke</button>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
