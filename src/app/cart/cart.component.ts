@@ -25,10 +25,13 @@ export class CartComponent implements OnInit {
 
   constructor(private router:Router, private userService:UsersService, private dialog: MatDialog) {
     this.userService.httpGetShoppingCartItems();
+    this.userService.httpGetPaymentInfo();
     this.shoppingCartItems = UsersService.shoppingCartItems;
     this.products = UsersService.products;
     this.user = ShareInfoService.userName;
     // this.openDialog();
+    this.userService.httpGetShoppingCartItems();
+
     setTimeout(() => {
       this.CheckItems();
     }, 100);
@@ -51,6 +54,7 @@ export class CartComponent implements OnInit {
     this.userService.httpDeleteOneItem(id);
   }
   public Checkout(){
+    this.userService.httpGetShoppingCartItems();
     this.router.navigate(['/payment'])
   }
   openDialog(): void {

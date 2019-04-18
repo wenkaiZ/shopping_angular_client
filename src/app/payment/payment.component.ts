@@ -20,6 +20,7 @@ export class PaymentComponent implements OnInit {
     this.allPaymentInfo = UsersService.paymentInfo;
     this.user = ShareInfoService.userName;
     this.userService.httpGetPaymentInfo();
+    this.userService.httpGetShoppingCartItems();
     this.CheckPayment();
   }
 

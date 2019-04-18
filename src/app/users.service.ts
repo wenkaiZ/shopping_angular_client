@@ -84,6 +84,7 @@ export class UsersService {
     this.http.post(this.requestUrl+"/ShoppingCartItem/DeleteOne/"+content, content, this.httpOptions)
     .subscribe(
       val => {
+        this.httpGetShoppingCartItems();
         console.log('post successfully', val);
         this.router.navigate(['/shop'])
       },
@@ -117,6 +118,7 @@ httpPostPayment(content) {
 
 /** Delete all shopping cart item*/
 httpDeleteAllItem(content) {
+  console.log(content);
   this.http.post(this.requestUrl+"/ShoppingCartItem/Delete?username="+content, content, this.httpOptions)
   .subscribe(
     val => {

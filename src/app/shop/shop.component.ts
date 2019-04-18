@@ -24,6 +24,7 @@ export class ShopComponent implements OnInit {
               private dialog: MatDialog) { 
     this.products = UsersService.products;
     this.userName = ShareInfoService.userName;
+    this.userService.httpGetShoppingCartItems();
   }
 
   ngOnInit() {
@@ -38,7 +39,7 @@ export class ShopComponent implements OnInit {
     setTimeout(() => {
       this.userService.httpGetShoppingCartItems();
     }, 100);
-   
+    alert("Add successfully!!!");
   }
   openDialog(): void {
     // const dialogConfig = new MatDialogConfig();
@@ -56,6 +57,8 @@ export class ShopComponent implements OnInit {
     });
   }
   public Cart(){
+    //this.router.navigate(['/cart']);
+
     this.openDialog();
   }
 }
