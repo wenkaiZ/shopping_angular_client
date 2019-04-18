@@ -21,7 +21,7 @@
         <tr *ngFor="let s of userItems">
                 <td>{{ s.productName }}</td>
                 <div *ngFor="let p of products">
-                    <td *ngIf="p.productName==s.productName">{{ p.price }}</td>
+                    <td *ngIf="p.productName==s.productName">{{ p.price }}$</td>
                 </div>
                 <td>
                     <form (ngSubmit)="deleteItem($event)" name ={{s.id}}>

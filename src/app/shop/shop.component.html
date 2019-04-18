@@ -26,7 +26,7 @@
           <tr *ngFor="let p of products">
             <td>{{ p.id }}</td>
             <td>{{ p.productName }}</td>
-            <td>{{ p.price }}</td>
+            <td>{{ p.price }}$</td>
             <td>
                 <form (ngSubmit)="addItem($event)" name ={{p.productName}}>
                     <input name ="ProductName" id="_ProductName" type="text" value={{p.productName}} style="display:none"/>
