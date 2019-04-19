@@ -39,7 +39,7 @@ export class ShopComponent implements OnInit {
     setTimeout(() => {
       this.userService.httpGetShoppingCartItems();
     }, 100);
-    alert("Add successfully!!!");
+    //alert("Add successfully!!!");
   }
   openDialog(): void {
     // const dialogConfig = new MatDialogConfig();
@@ -48,7 +48,7 @@ export class ShopComponent implements OnInit {
     this.fileNameDialogRef = this.dialog.open(GameComponent,{
       hasBackdrop : true,
       autoFocus : true,
-      disableClose: true
+      disableClose: false
     });
     
 
